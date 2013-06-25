@@ -15,7 +15,7 @@ cd {putanja/do/projekta}
 
 play run
 
-#In memory data base 
+#In-memory database 
 
 http://localhost:9000
 
