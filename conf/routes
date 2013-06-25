@@ -1,0 +1,23 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /cities/all                 controllers.Cities.all()
+GET     /cities/$id<[0-9]+>         controllers.Cities.byId(id: Long)
+GET     /cities/:name               controllers.Cities.byName(name: String)
+POST    /cities                     controllers.Cities.save()
+
+GET     /sights/all                 controllers.Sights.all()
+GET     /sights/$id<[0-9]+>         controllers.Sights.byId(id: Long)
+GET     /sights/:cityName/:name     controllers.Sights.byName(cityName: String, name: String)
+GET     /sights/:cityName           controllers.Sights.forCity(cityName: String)
+POST    /sights                     controllers.Sights.save()
+
+GET /logs/all                       controllers.Logs.all()
+GET /logs/:after                    controllers.Logs.after(after: Long)
+
+GET /images/:sightId                controllers.Images.get(sightId: Long)
+POST /images/:sightId               controllers.Images.save(sightId: Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
